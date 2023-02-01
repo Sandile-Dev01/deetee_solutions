@@ -4,6 +4,7 @@ html {
   padding: 0;
   box-sizing: border-box;
   cursor: default;
+  scroll-behavior: smooth;
   /* background-color: var(--primary-clr); */
 }
 
@@ -13,7 +14,7 @@ html {
   --secondary-clr: rgb(240, 133, 26.255);
   --accent-clr: rgb(225, 12, 20);
 
-  --gradient: rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8);
+  --gradient: rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9);
 
   --rem: 1rem;
   --half-rem: 0.5rem;
@@ -26,6 +27,9 @@ html {
 
 nav {
   background-color: var(--primary-clr);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -40,14 +44,14 @@ nav ul a {
   cursor: pointer;
   font-family: var(--secondary--ff);
   text-decoration: none;
-  color: var(--secondary-clr);
+  color: var(--light-clr);
   margin: var(--half-rem);
   font-size: calc(var(--rem) + var(--half-rem));
   transition: var(--transition);
 }
 
 nav ul a:hover {
-  color: var(--light-clr);
+  color: var(--secondary-clr);
 }
 
 p,
@@ -228,4 +232,100 @@ h3 {
 
 .about_industries li p {
   color: black;
+}
+
+.about_competition {
+  width: 100%;
+  color: var(--light-clr);
+  background: linear-gradient(var(--gradient)), url(./images/generator.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.about_competition_text {
+  width: 60vw;
+  padding: var(--rem);
+  font-weight: 700;
+  font-family: var(--secondary--ff);
+}
+
+/* Contact section */
+
+.contact_section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 1rem;
+}
+
+.contact_sub_section {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.contact_section h3 {
+  text-align: center;
+  width: 50vw;
+  color: black;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  margin: 0.5rem 4rem;
+}
+
+input {
+  margin: var(--half-rem) 0;
+  padding: 1rem 0;
+}
+
+input:focus {
+  outline: none;
+}
+
+.text_holder {
+  padding-bottom: 5rem;
+}
+
+.contact_hours_container h1,
+.contact_hours_container p {
+  color: var(--primary-clr);
+}
+
+.contact_hours_img {
+  background: url(./images/generator.jpg);
+  height: 30vh;
+  width: 20vw;
+  background-size: cover;
+}
+
+/* footer */
+
+footer {
+  font-family: var(--secondary--ff);
+  padding: var(--rem);
+  display: flex;
+  justify-content: center;
+  background-color: var(--primary-clr);
+  color: var(--light-clr);
+}
+
+footer a {
+  margin: 0 var(--half-rem);
+  color: var(--secondary-clr);
+  cursor: pointer;
+
+  transition: var(--transition);
+}
+
+footer a:hover {
+  color: var(--light-clr);
 }
