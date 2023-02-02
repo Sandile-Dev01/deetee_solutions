@@ -22,8 +22,9 @@ html {
   --rem: 1rem;
   --half-rem: 0.5rem;
 
-  --primary-ff: "Teko", sans-serif;
-  --secondary--ff: "Roboto Mono", monospace;
+  --primary-ff: "Open Sans", sans-serif;
+  /* font-family: sans-serif; */
+  --secondary--ff: "Fira Sans", sans-serif;
 
   --transition: all 250ms ease-in-out;
 }
@@ -450,8 +451,6 @@ h3 {
 .contact_section {
   display: flex;
   flex-direction: column;
-
-  /* justify-content: space-between; */
   justify-content: center;
   height: 100%;
   padding: 1rem;
@@ -461,7 +460,12 @@ h3 {
   height: 100%;
   display: flex;
   justify-content: center;
-  /* justify-content: space-evenly; */
+}
+
+.connect_icon {
+  font-family: var(--primary-ff);
+  margin-bottom: -1.2rem;
+  margin-top: 10px;
 }
 
 .contact_section h3 {
@@ -514,12 +518,23 @@ form button {
   font-weight: 700;
   color: var(--light-clr);
   background-color: var(--accent-clr);
-  border: 2px;
+  border: 2px solid var(--accent-clr);
 }
 
 form button:hover {
   color: var(--primary-clr);
+  border: 2px solid var(--primary-clr);
   background-color: var(--light-clr);
+}
+
+.contact_hours_container span {
+  margin: var(--half-rem) 0;
+  display: flex;
+  align-items: center;
+}
+
+.contact_hours_container i {
+  font-size: 2rem;
 }
 
 .contact_hours_container p {
@@ -539,7 +554,7 @@ form button:hover {
   background: linear-gradient(var(--gradient)), url(./images/bg_img.jpeg);
   background-repeat: no-repeat;
   background-position: center;
-  height: 17.5rem;
+  height: 25vh;
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -602,6 +617,7 @@ form button:hover {
 
   .contact_hours_img {
     width: 20vw;
+    height: 25vh;
   }
 }
 
