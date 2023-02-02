@@ -580,7 +580,7 @@ form button:hover {
   }
 
   .contact_hours_img h1 {
-    font-size: 13vw;
+    font-size: 5vw;
     animation: glow_one 4s ease-in-out alternate infinite;
   }
 
@@ -607,7 +607,6 @@ form button:hover {
   }
 
   .contact_hours_img h1 {
-    font-size: 3vw;
     animation: glow 4s ease-in-out alternate infinite;
   }
 
@@ -638,7 +637,7 @@ form button:hover {
 
 @keyframes glow_one {
   0% {
-    font-size: 11vw;
+    font-size: 7vw;
     text-shadow: 0 0 1px var(--secondary-clr);
   }
   50% {
@@ -652,13 +651,15 @@ form button:hover {
 
 @keyframes glow {
   0% {
+    font-size: 2vw;
     text-shadow: 0 0 1px var(--secondary-clr);
   }
   50% {
-    font-size: 3.2vw;
+    font-size: 1.5vw;
     text-shadow: 0 0 2px var(--secondary-clr);
   }
   100% {
+    font-size: 2vw;
     text-shadow: 0 0 3.5px var(--secondary-clr);
   }
 }
