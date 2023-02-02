@@ -10,6 +10,7 @@ html {
 
 :root {
   --light-clr: rgba(255, 255, 255, 0.949);
+  --light-accent-clr: rgb(111, 111, 111);
   --primary-clr: rgb(0, 0, 0.255);
   --primary-acc-clr: rgba(40, 40, 40, 0.878);
 
@@ -81,7 +82,7 @@ h3 {
   justify-content: center;
   align-items: center;
   position: relative;
-  height: 80vh;
+  height: 90vh;
   background: linear-gradient(var(--gradient)), url(./images/generator.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -213,6 +214,15 @@ h3 {
     font-size: 2vw;
     padding: 0 var(--rem);
   }
+
+  .home_sub_container p {
+    font-size: 1.5vw;
+  }
+
+  .home_container label {
+    padding: 2rem;
+    font-size: 1.5vw;
+  }
 }
 
 /* About us */
@@ -258,6 +268,7 @@ h3 {
 }
 
 .about_content_depend_container p {
+  /* padding: var(--rem); */
   color: var(--primary-clr);
 }
 
@@ -424,6 +435,14 @@ h3 {
 }
 
 @media (min-width: 2559px) {
+  .about_content_depend_container p,
+  .about_content_depend_container i {
+    font-size: 1.2vw;
+  }
+
+  .about_benefits h1 {
+    font-size: 2.5vw;
+  }
 }
 
 /* Contact section */
@@ -434,12 +453,14 @@ h3 {
 
   /* justify-content: space-between; */
   justify-content: center;
-  height: 80%;
+  height: 100%;
   padding: 1rem;
 }
 
 .contact_sub_section {
+  height: 100%;
   display: flex;
+  justify-content: center;
   /* justify-content: space-evenly; */
 }
 
@@ -448,6 +469,10 @@ h3 {
   text-align: center;
   font-family: var(--secondary--ff);
   color: var(--primary-clr);
+}
+
+.contact_sub_section p {
+  padding: 0;
 }
 
 form {
@@ -512,7 +537,6 @@ form button:hover {
 
 .contact_hours_img {
   background: linear-gradient(var(--gradient)), url(./images/bg_img.jpeg);
-  /* background-attachment: fixed; */
   background-repeat: no-repeat;
   background-position: center;
   height: 17.5rem;
@@ -582,6 +606,18 @@ form button:hover {
 }
 
 @media (min-width: 2559px) {
+  .contact_section h3 {
+    font-size: 1.3vw;
+  }
+
+  form {
+    height: 20vh;
+  }
+
+  input {
+    padding: 2rem var(--half-rem);
+    font-size: 0.5vw;
+  }
 }
 
 @keyframes glow_one {
@@ -619,7 +655,7 @@ footer {
   display: flex;
   justify-content: center;
   background-color: var(--primary-clr);
-  color: var(--light-clr);
+  color: var(--light-accent-clr);
 }
 
 footer a {
