@@ -337,6 +337,11 @@ h3 {
   font-family: var(--secondary--ff);
 }
 
+.about_competition_text h1,
+.about_competition_text p {
+  color: var(--light-clr);
+}
+
 /* Media queries for About */
 
 @media (min-width: 0) {
@@ -452,10 +457,11 @@ form {
 }
 
 input {
+  color: var(--light-clr);
   outline: none;
   border: none;
   margin: var(--half-rem) 0;
-  padding: var(--rem) 0;
+  padding: var(--rem) var(--half-rem);
   width: 100%;
   background-color: var(--primary-acc-clr);
 }
@@ -483,6 +489,7 @@ form button {
   font-weight: 700;
   color: var(--light-clr);
   background-color: var(--accent-clr);
+  border: 2px;
 }
 
 form button:hover {
@@ -517,10 +524,7 @@ form button:hover {
 }
 
 .contact_hours_img h1 {
-  font-size: 3vw;
   color: var(--accent-clr);
-
-  animation: glow 4s ease-in-out alternate infinite;
 }
 
 /* Media queries for contact */
@@ -534,6 +538,11 @@ form button:hover {
     flex-direction: column;
     align-items: center;
     width: 60vw;
+  }
+
+  .contact_hours_img h1 {
+    font-size: 13vw;
+    animation: glow_one 4s ease-in-out alternate infinite;
   }
 
   form {
@@ -558,6 +567,11 @@ form button:hover {
     width: 60vw;
   }
 
+  .contact_hours_img h1 {
+    font-size: 3vw;
+    animation: glow 4s ease-in-out alternate infinite;
+  }
+
   form {
     width: 30vw;
   }
@@ -570,12 +584,26 @@ form button:hover {
 @media (min-width: 2559px) {
 }
 
+@keyframes glow_one {
+  0% {
+    font-size: 11vw;
+    text-shadow: 0 0 1px var(--secondary-clr);
+  }
+  50% {
+    font-size: 8vw;
+    text-shadow: 0 0 2px var(--secondary-clr);
+  }
+  100% {
+    text-shadow: 0 0 3.5px var(--secondary-clr);
+  }
+}
+
 @keyframes glow {
   0% {
     text-shadow: 0 0 1px var(--secondary-clr);
   }
   50% {
-    font-size: 3.5vw;
+    font-size: 3.2vw;
     text-shadow: 0 0 2px var(--secondary-clr);
   }
   100% {
