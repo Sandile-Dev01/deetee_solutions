@@ -11,10 +11,12 @@ html {
 :root {
   --light-clr: rgba(255, 255, 255, 0.949);
   --primary-clr: rgb(0, 0, 0.255);
+  --primary-acc-clr: rgba(40, 40, 40, 0.878);
+
   --secondary-clr: rgb(240, 133, 26.255);
   --accent-clr: rgb(225, 12, 20);
 
-  --gradient: rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9);
+  --gradient: rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75);
 
   --rem: 1rem;
   --half-rem: 0.5rem;
@@ -33,9 +35,15 @@ nav {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  color: var(--accent-clr);
+}
+
+nav i {
+  cursor: pointer;
 }
 
 nav ul {
+  list-style-type: none;
   display: flex;
   justify-content: space-between;
 }
@@ -61,6 +69,11 @@ h3 {
   color: var(--light-clr);
 }
 
+.logo_container img {
+  width: 100%;
+  object-fit: cover;
+}
+
 /* home section */
 
 .home_container {
@@ -78,20 +91,17 @@ h3 {
 
 .home_sub_container {
   padding: var(--rem);
-  border-radius: var(--half-rem);
-  width: 50vw;
   position: absolute;
 }
 
 .home_sub_container h1 {
-  font-size: 8vw;
   font-family: var(--primary-ff);
 }
 
 .home_sub_container p {
   font-family: var(--secondary--ff);
   font-style: normal;
-  text-align: justify;
+  /* text-align: justify; */
   margin-bottom: var(--rem);
 }
 
@@ -136,6 +146,44 @@ h3 {
   visibility: visible;
 }
 
+/* Media queries for home */
+
+@media (min-width: 0) {
+  nav {
+    flex-direction: column;
+  }
+
+  nav ul {
+    flex-direction: column;
+    margin: var(--rem);
+  }
+
+  .logo_container {
+    width: 65vw;
+  }
+
+  .home_sub_container {
+    width: 80vw;
+  }
+
+  .home_sub_container h1 {
+    font-size: 20vw;
+    line-height: 0.85;
+  }
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 1489px) {
+  .home_sub_container h1 {
+    font-size: 8vw;
+  }
+}
+
+@media (min-width: 2559px) {
+}
+
 /* About us */
 
 .about_container {
@@ -146,9 +194,6 @@ h3 {
 }
 
 .about_title_container {
-  margin: calc(var(--rem) * 3);
-  height: 40vh;
-  width: 70vw;
   background: linear-gradient(var(--gradient)), url(./images/refuel-tank.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -161,7 +206,6 @@ h3 {
 }
 
 .about_title_container h1 {
-  font-size: 6vw;
   font-family: var(--primary-ff);
 }
 
@@ -178,9 +222,9 @@ h3 {
 
 .about_content_depend_container h2 {
   font-size: 2vw;
-  text-shadow: 0 0 10px var(--primary-clr);
+  /* text-shadow: 0 0 10px var(--primary-clr); */
   margin: var(--rem);
-  color: var(--light-clr);
+  color: var(--accent-clr);
   font-family: var(--primary-ff);
 }
 
@@ -202,8 +246,7 @@ h3 {
 }
 
 .about_content_depend_container {
-  display: flex;
-  align-items: center;
+  margin: var(--half-rem) var(--half-rem);
 }
 
 .about_benefits {
@@ -212,10 +255,9 @@ h3 {
 }
 
 .about_benefits h1 {
-  /* font-size: 2vw; */
   text-align: center;
   margin: var(--rem);
-  color: var(--primary-clr);
+  color: var(--accent-clr);
   font-family: var(--primary-ff);
 }
 
@@ -225,17 +267,34 @@ h3 {
   color: var(--primary-clr);
 }
 
+.about_industries ul {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .about_industries h2 {
+  text-align: center;
+  font-size: 2.1vw;
+  color: var(--accent-clr);
+  margin: var(--rem);
   font-family: var(--primary-ff);
-  color: black;
 }
 
 .about_industries li p {
   color: black;
 }
 
+.about_industries i {
+  color: var(--secondary-clr);
+  margin-right: var(--half-rem);
+}
+
 .about_competition {
+  height: 40vh;
   width: 100%;
+  margin: var(--rem) 0;
   color: var(--light-clr);
   background: linear-gradient(var(--gradient)), url(./images/generator.jpg);
   background-repeat: no-repeat;
@@ -243,6 +302,7 @@ h3 {
   background-size: cover;
   display: flex;
   justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
@@ -253,14 +313,43 @@ h3 {
   font-family: var(--secondary--ff);
 }
 
+/* Media queries for About */
+
+@media (min-width: 0) {
+  .about_title_container {
+    margin: calc(var(--rem) * 2);
+    height: 40vh;
+    width: 85vw;
+  }
+
+  .about_title_container h1 {
+    font-size: 15vw;
+  }
+
+  .about_title_container p {
+    text-align: center;
+    font-size: 3vw;
+  }
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 1489px) {
+}
+
+@media (min-width: 2559px) {
+}
+
 /* Contact section */
 
 .contact_section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  height: 100%;
+  /* justify-content: space-between; */
+  justify-content: center;
+  height: 80vh;
   padding: 1rem;
 }
 
@@ -270,9 +359,11 @@ h3 {
 }
 
 .contact_section h3 {
+  margin: 1rem;
   text-align: center;
+  font-family: var(--secondary--ff);
   width: 50vw;
-  color: black;
+  color: var(--primary-clr);
 }
 
 form {
@@ -283,28 +374,101 @@ form {
 }
 
 input {
+  outline: none;
+  border: none;
   margin: var(--half-rem) 0;
-  padding: 1rem 0;
+  padding: var(--rem) 0;
+  background-color: var(--primary-acc-clr);
 }
 
 input:focus {
+  color: var(--secondary-clr);
   outline: none;
+}
+
+::placeholder {
+  padding: var(--half-rem);
+  color: var(--light-clr);
 }
 
 .text_holder {
   padding-bottom: 5rem;
 }
 
-.contact_hours_container h1,
+form button {
+  cursor: pointer;
+  transition: var(--transition);
+  padding: var(--half-rem);
+  font-family: var(--secondary--ff);
+  font-weight: 700;
+  color: var(--light-clr);
+  background-color: var(--accent-clr);
+}
+
+form button:hover {
+  color: var(--primary-clr);
+  background-color: var(--light-clr);
+}
+
 .contact_hours_container p {
   color: var(--primary-clr);
 }
 
+.contact_hours_container h1 {
+  color: var(--secondary-clr);
+  font-family: var(--primary-ff);
+}
+
+.contact_hours_container p {
+  font-family: var(--secondary--ff);
+}
+
 .contact_hours_img {
-  background: url(./images/generator.jpg);
-  height: 30vh;
-  width: 20vw;
+  background: linear-gradient(var(--gradient)), url(./images/bg_img.jpeg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 17.5rem;
+  width: 30vw;
   background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--primary-ff);
+}
+
+.contact_hours_img h1 {
+  font-size: 3vw;
+  color: var(--accent-clr);
+
+  animation: glow 4s ease-in-out alternate infinite;
+}
+
+/* Media queries for contact */
+
+@media (min-width: 0) {
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 1489px) {
+}
+
+@media (min-width: 2559px) {
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 1px var(--secondary-clr);
+  }
+  50% {
+    font-size: 3.5vw;
+    text-shadow: 0 0 2px var(--secondary-clr);
+  }
+  100% {
+    text-shadow: 0 0 3.5px var(--secondary-clr);
+  }
 }
 
 /* footer */
