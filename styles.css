@@ -426,8 +426,6 @@ h3 {
 .contact_section {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  align-content: center;
 
   /* justify-content: space-between; */
   justify-content: center;
@@ -507,7 +505,7 @@ form button:hover {
 
 .contact_hours_img {
   background: linear-gradient(var(--gradient)), url(./images/bg_img.jpeg);
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   background-repeat: no-repeat;
   background-position: center;
   height: 17.5rem;
@@ -528,9 +526,14 @@ form button:hover {
 /* Media queries for contact */
 
 @media (min-width: 0) {
+  .contact_section {
+    align-items: center;
+  }
+
   .contact_sub_section {
     flex-direction: column;
     align-items: center;
+    width: 60vw;
   }
 
   form {
